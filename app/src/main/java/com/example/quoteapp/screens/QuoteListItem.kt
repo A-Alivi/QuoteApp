@@ -38,6 +38,7 @@ import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.quoteapp.models.Quote
@@ -71,6 +72,8 @@ fun QuoteListItem(quote:Quote, onClick:(quote:Quote)->Unit)
                     Text(
                         text = quote.quote,
                         style = MaterialTheme.typography.headlineSmall,
+                        overflow = TextOverflow.Ellipsis,
+                        maxLines = 2,
                         modifier = Modifier
                             .padding(0.dp,0.dp,0.dp,8.dp)
                         )
